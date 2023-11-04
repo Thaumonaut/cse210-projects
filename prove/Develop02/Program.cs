@@ -72,7 +72,7 @@ class Program
                     isRunning = false;
                     return;
                 case "3":
-                    if (sanitziedMod != null) {
+                    if (sanitziedMod != null || sanitziedMod != "") {
                         Console.WriteLine($"Saved to \"{sanitziedMod}\"");
                         myJournal.SaveToFile(sanitziedMod);
                     } else {
@@ -82,7 +82,7 @@ class Program
                     Console.WriteLine("File Save!");
                     break;
                 case "4":
-                    if (sanitziedMod != null) {
+                    if (sanitziedMod != null || sanitziedMod != "") {
                         Console.WriteLine($"Loading: \"{sanitziedMod}\"");
                         myJournal.LoadFromFile(sanitziedMod);
                     } else {
