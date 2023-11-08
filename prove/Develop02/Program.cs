@@ -37,6 +37,15 @@ class Program
             myJournal.entries.Add(newEntry);
         }
 
+        string getFilename() {
+            Console.WriteLine($"Enter filename: (Deault: {DefaultFilename})");
+            string filename = Console.ReadLine();
+            if (filename == "") {
+                filename = DefaultFilename;
+            }
+            return filename;
+        }
+
         while (isRunning) {
             
             Console.Clear();
@@ -50,7 +59,7 @@ class Program
             string selection = Console.ReadLine();
             string[] parsedSelection = selection.Split("-");
             string sanitziedSelection = parsedSelection[0].Trim().ToLower();
-            string sanitziedMod = null;
+            string sanitziedMod = "";
             if(parsedSelection.Length > 1)
             {
                 sanitziedMod = parsedSelection[1].Trim('\"');
@@ -72,24 +81,24 @@ class Program
                     isRunning = false;
                     return;
                 case "3":
-                    if (sanitziedMod != null || sanitziedMod != "") {
+                    if (sanitziedMod != "") {
                         Console.WriteLine($"Saved to \"{sanitziedMod}\"");
                         myJournal.SaveToFile(sanitziedMod);
                     } else {
-                        Console.WriteLine($"Saved to \"{DefaultFilename}\"");
-                        myJournal.SaveToFile(DefaultFilename);
+                        string filename = getFilename();
+                        Console.WriteLine($"Saved to \"{filename}\"");
+                        myJournal.SaveToFile(filename);
                     }
-                    Console.WriteLine("File Save!");
                     break;
                 case "4":
-                    if (sanitziedMod != null || sanitziedMod != "") {
+                    if (sanitziedMod != "") {
                         Console.WriteLine($"Loading: \"{sanitziedMod}\"");
                         myJournal.LoadFromFile(sanitziedMod);
                     } else {
-                        Console.WriteLine($"Loading: \"{DefaultFilename}\"");
-                        myJournal.LoadFromFile(DefaultFilename);
+                        string filename = getFilename();
+                        Console.WriteLine($"Loading: \"{filename}\"");
+                        myJournal.LoadFromFile(filename);
                     }
-                    Console.WriteLine("File Loaded!");
                     break;
                 default:
                     Console.WriteLine("Sorry, that is not a valid response.");

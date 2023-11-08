@@ -25,6 +25,8 @@ public class Journal
                 outputFile.WriteLine(string.Join("|", entry._date, entry._prompt, entry._response));
             }
         }
+
+        Console.WriteLine("File saved!");
         
     }
 
@@ -55,5 +57,7 @@ public class Journal
             entries.Add(entry);
 
         }
+
+        Console.WriteLine("File loaded!");
     }
 }
