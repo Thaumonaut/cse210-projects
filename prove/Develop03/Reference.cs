@@ -20,9 +20,11 @@ public class Reference
         _lastVerse = lastVerse;
     }
 
-    public string Display() {
+    public string Display()
+    {
         string verses = _verse.ToString();
-        if(_lastVerse != 0) {
+        if (_lastVerse != 0)
+        {
             verses = $"{_verse}-{_lastVerse}";
         }
         return $"{_book} {_chapter}:{verses}";

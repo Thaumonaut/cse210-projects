@@ -1,4 +1,4 @@
-public class Scripture 
+public class Scripture
 {
     private Reference _ref;
     private List<Word> _verse;
@@ -16,7 +16,8 @@ public class Scripture
         }
     }
 
-    public List<Word> StringToVerse(string verse) {
+    public List<Word> StringToVerse(string verse)
+    {
         List<Word> tempList = new List<Word>();
         string[] splitVerse = verse.Split(" ");
         foreach (var word in splitVerse)
@@ -27,7 +28,8 @@ public class Scripture
         return tempList;
     }
 
-    public void HideRandomWords(int numberToHide) {
+    public void HideRandomWords(int numberToHide)
+    {
 
         _lastHidden = new List<int>();
         if (_visibleWords.Count < numberToHide)
@@ -45,8 +47,10 @@ public class Scripture
         }
     }
 
-    public void RestoreLastHidden() {
-        if (_lastHidden == null || _lastHidden.Count == 0) {
+    public void RestoreLastHidden()
+    {
+        if (_lastHidden == null || _lastHidden.Count == 0)
+        {
             return;
         }
         foreach (var index in _lastHidden)
@@ -56,7 +60,8 @@ public class Scripture
         }
     }
 
-    public string Display() {
+    public string Display()
+    {
         string displayVerse = $"{_ref.Display()}\n";
         foreach (var word in _verse)
         {
@@ -65,7 +70,8 @@ public class Scripture
         return displayVerse;
     }
 
-    public bool IsAllHidden() {
+    public bool IsAllHidden()
+    {
         return _visibleWords.Count == 0;
     }
 

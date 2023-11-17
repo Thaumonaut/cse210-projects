@@ -1,11 +1,12 @@
 using System.Text.RegularExpressions;
 
-public class Word 
+public class Word
 {
     private string _word;
     private bool _isVisible;
 
-    public Word (string word) {
+    public Word(string word)
+    {
         _word = word;
         _isVisible = true;
     }
@@ -20,13 +21,15 @@ public class Word
         _isVisible = true;
     }
 
-    public bool GetVisibility() {
+    public bool GetVisibility()
+    {
         return _isVisible;
     }
 
     public string Display()
     {
-        if(_isVisible) {
+        if (_isVisible)
+        {
             return _word;
         }
 
