@@ -70,6 +70,10 @@ public class Scripture
         return displayVerse;
     }
 
+    public string DisplayReference() {
+        return _ref.Display();
+    }
+
     public bool IsAllHidden()
     {
         return _visibleWords.Count == 0;
