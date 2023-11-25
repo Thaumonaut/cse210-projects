@@ -1,7 +1,10 @@
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string name, string description) 
-    : base(name, description){}
+    public BreathingActivity() : base(
+        name: "Breathing Activity", 
+        description: "This activity will help you relax by walking your through breathing in and out slowly. We will be doing 4 4 4 breathing where you will breath in for 4 seconds, hold for 4 seconds, and breath out for 4 seconds. Clear your mind and focus on breathing."
+    ){}
+
     public void Run(){
         DisplayStartMessage();
         Console.Clear();
