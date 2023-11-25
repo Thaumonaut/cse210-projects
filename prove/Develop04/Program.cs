@@ -35,6 +35,7 @@ class Program
                     new ListingActivity().Run();
                     break;
                 default:
+                Console.Clear();
                     return;
             }
         }

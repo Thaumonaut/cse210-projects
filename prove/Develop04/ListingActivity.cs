@@ -20,8 +20,8 @@ public class ListingActivity : Activity
         ShowCountDown(5);
         Console.WriteLine(" BEGIN!");
 
-        int listCount = GetListFromUser().Count;
-        Console.WriteLine($"Congrats, you were able to add {listCount} items to your list!");
+        _count = GetListFromUser().Count;
+        Console.WriteLine($"Congrats, you were able to add {_count} items to your list!");
         ShowLoadingDots(5);
 
         DisplayEndMessage();

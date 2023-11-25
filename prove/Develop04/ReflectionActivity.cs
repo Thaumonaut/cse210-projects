@@ -57,7 +57,8 @@ public class RelfectionActivity : Activity
         Console.ReadLine();
     }
     public void DisplayQuestions(){
-        Console.WriteLine($"? > {GetRandomQuestion()}");
+        Console.Write($"> {GetRandomQuestion()}");
         ShowLoadingDots(5);
+        Console.WriteLine();
     }
 }
