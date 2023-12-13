@@ -1,5 +1,8 @@
+using System.Text.Json.Serialization;
+
 public class Person
 {
+    
     private string _preferredName;
     private string _email;
     private Dictionary<ePlatforms, string> _usernames;
